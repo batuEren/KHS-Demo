@@ -18,10 +18,10 @@ public class GunItem : Item, IUsable
     private int bulletsInClip = 10;
     private float fireTimer = 0;
 
-    //public void LoadClip(AmmoClipItem clip)
-    //{
-    //    bulletsInClip = clip.bulletCount;
-    //}
+    public void LoadClip(AmmoClipItem clip)
+    {
+        bulletsInClip = clip.bulletCount;
+    }
 
     private void Update()
     {
@@ -59,8 +59,9 @@ public class GunItem : Item, IUsable
 
         bulletsInClip--;
 
-        // spawn bullet or cast ray
-        Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        //cast ray and then adjust bullet rotation accordingly
+
+        Instantiate(bulletPrefab, muzzle.position, muzzle.rotation); 
     }
 
 }

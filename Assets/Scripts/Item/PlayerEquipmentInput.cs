@@ -65,7 +65,7 @@ public class PlayerEquipmentInput : MonoBehaviour
 
     private void EquipItemInFirstFreeHand(Item item)
     {
-        // Simple rule: right hand first, then left
+        // right hand first, then left
         if (equipment.GetItemInSlot(EquipmentSlot.RightHand) == null &&
             item.CanEquipIn(EquipmentSlot.RightHand))
         {
@@ -76,6 +76,11 @@ public class PlayerEquipmentInput : MonoBehaviour
         {
             equipment.Equip(item, EquipmentSlot.LeftHand);
         }
-        // You could add "swap" behavior here if both are full.
+        else if (equipment.GetItemInSlot(EquipmentSlot.Head) == null &&
+         item.CanEquipIn(EquipmentSlot.Head))
+        {
+            equipment.Equip(item, EquipmentSlot.Head);
+        }
+
     }
 }
