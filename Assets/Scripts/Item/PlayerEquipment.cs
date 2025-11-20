@@ -12,11 +12,12 @@ public class PlayerEquipment : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetButtonDown("Fire1"))
             UseSlot(EquipmentSlot.LeftHand);
 
         if (Input.GetButtonDown("Fire2"))
-            UseSlot(EquipmentSlot.RightHand);
+            UseSlot(EquipmentSlot.RightHand);*/
     }
 
     public Item GetItemInSlot(EquipmentSlot slot)
@@ -110,6 +111,15 @@ public class PlayerEquipment : MonoBehaviour
         else
         {
             TryInteractWithWorld(); // interact with world on empty hand
+        }
+    }
+
+    public void UseSlotHold(EquipmentSlot slot)
+    {
+        var item = GetItemInSlot(slot);
+        if (item is IUsable usable)
+        {
+            usable.UseHold(this, slot);
         }
     }
 

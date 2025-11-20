@@ -1,3 +1,4 @@
+using System.Net;
 using UnityEngine;
 
 public class PlayerEquipmentInput : MonoBehaviour
@@ -18,11 +19,15 @@ public class PlayerEquipmentInput : MonoBehaviour
     private void Update()
     {
         // Use items
-        if (Input.GetMouseButtonDown(0))      // left mouse
+        if (Input.GetButtonDown("Fire1")) // left mouse
             equipment.UseSlot(EquipmentSlot.RightHand);
+        else if (Input.GetButton("Fire1")) // left mouse
+            equipment.UseSlotHold(EquipmentSlot.RightHand);
 
-        if (Input.GetMouseButtonDown(1))      // right mouse
+        if (Input.GetButtonDown("Fire2"))      // right mouse
             equipment.UseSlot(EquipmentSlot.LeftHand);
+        else if (Input.GetButton("Fire2"))      // right mouse
+            equipment.UseSlotHold(EquipmentSlot.LeftHand);
 
         // Equip / interact
         if (Input.GetKeyDown(KeyCode.E))

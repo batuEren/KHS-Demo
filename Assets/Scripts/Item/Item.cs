@@ -4,6 +4,7 @@ public interface IUsable
 {
     // called when players uses
     void Use(PlayerEquipment owner, EquipmentSlot slot);
+    void UseHold(PlayerEquipment owner, EquipmentSlot slot);
 }
 
 public abstract class Item : MonoBehaviour
