@@ -171,7 +171,7 @@ public class PlayerEquipment : MonoBehaviour
         Camera cam = Camera.main;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, 3f))
         {
-            var interactable = hit.collider.GetComponent<WorldInteractable>();
+            var interactable = hit.collider.GetComponentInParent<WorldInteractable>();
             if (interactable != null)
                 interactable.Interact(this);
         }
