@@ -31,6 +31,21 @@ public class PlayerEquipment : MonoBehaviour
         };
     }
 
+    public EquipmentSlot? GetSlotOfItem(Item item)
+    {
+        if (item == leftHandItem)
+            return EquipmentSlot.LeftHand;
+
+        if (item == rightHandItem)
+            return EquipmentSlot.RightHand;
+
+        if (item == headItem)
+            return EquipmentSlot.Head;
+
+        return null; // not found
+    }
+
+
     public Item GetItemInOtherHand(EquipmentSlot slot)
     {
         if (slot == EquipmentSlot.LeftHand) return rightHandItem;

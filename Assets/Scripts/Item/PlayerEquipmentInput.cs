@@ -19,14 +19,14 @@ public class PlayerEquipmentInput : MonoBehaviour
     private void Update()
     {
         // Use items
-        if (Input.GetButtonDown("Fire1")) // left mouse
+        if (Input.GetButtonDown("Fire2")) // right mouse
             equipment.UseSlot(EquipmentSlot.RightHand);
-        else if (Input.GetButton("Fire1")) // left mouse
+        else if (Input.GetButton("Fire2")) // right mouse
             equipment.UseSlotHold(EquipmentSlot.RightHand);
 
-        if (Input.GetButtonDown("Fire2"))      // right mouse
+        if (Input.GetButtonDown("Fire1"))      // left mouse
             equipment.UseSlot(EquipmentSlot.LeftHand);
-        else if (Input.GetButton("Fire2"))      // right mouse
+        else if (Input.GetButton("Fire1"))      // left mouse
             equipment.UseSlotHold(EquipmentSlot.LeftHand);
 
         // Equip / interact
@@ -34,11 +34,14 @@ public class PlayerEquipmentInput : MonoBehaviour
             TryPickupOrInteract();
 
         // Drop / unequip
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
             equipment.Drop(EquipmentSlot.RightHand);
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
             equipment.Drop(EquipmentSlot.LeftHand);
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            equipment.Drop(EquipmentSlot.Head);
     }
 
     private void TryPickupOrInteract()
