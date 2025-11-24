@@ -13,15 +13,6 @@ public class PlayerEquipment : MonoBehaviour
     private Item rightHandItem;
     private Item headItem;
 
-    void Update()
-    {
-        /*
-        if (Input.GetButtonDown("Fire1"))
-            UseSlot(EquipmentSlot.LeftHand);
-
-        if (Input.GetButtonDown("Fire2"))
-            UseSlot(EquipmentSlot.RightHand);*/
-    }
 
     public Item GetItemInSlot(EquipmentSlot slot)
     {
