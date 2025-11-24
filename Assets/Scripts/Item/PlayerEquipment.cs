@@ -1,5 +1,8 @@
 using UnityEngine;
 
+// Handles equipping and using items in the player's left hand, right hand, and head slots.
+// Responsible for parenting item transforms, toggling physics/colliders, and relaying use/interact calls.
+
 public class PlayerEquipment : MonoBehaviour
 {
     public Transform leftHandTransform;
@@ -96,9 +99,8 @@ public class PlayerEquipment : MonoBehaviour
 
         item.transform.localPosition = Vector3.zero; 
         item.transform.localRotation = Quaternion.identity;
-        
 
-    item.OnEquip(this, slot);
+        item.OnEquip(this, slot);
     }
 
     public void Unequip(EquipmentSlot slot)
